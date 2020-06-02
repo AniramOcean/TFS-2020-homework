@@ -1,4 +1,4 @@
-<a href="https://angular-bvrnrf.stackblitz.io">hw01-task3</a>
+<a href="https://stackblitz.com/edit/angular-bvrnrf?file=src%2Fapp%2Fapp.component.ts">Click to see code and preview</a>
 # Чисто формальные отношения
 
 Создайте форму регистрации.

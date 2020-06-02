@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+.form {
+  width: 550px;
+  height: 380px;
+  border: 2px solid #ff8f4a;
+  border-radius: 20px;
+  background: grey;
+  margin-bottom: 20px;
+}
+.container {
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+input, select {
+  text-align: center;
+  margin: 10px auto;
+  outline: none;
+  border: 1px dashed black;
+  border-radius: 12px;
+  color: black;
+  box-sizing: border-box;
+  width: 480px;
+  height: 20px;
+  font-size: 1rem;
+  padding: 1rem;
+}
+input::placeholder {
+  color: grey;
+
+}
+select {
+  width: 50%;
+}
+
+.btn {
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: #ff8f4a;
+  border: 3px solid black;
+  border-radius: 15px;
+  transition: background .3s linear, color .3s linear;
+
+  &:hover {
+    background: black;
+    color: #ff8f4a;
+  }
+}
+.result {
+  box-sizing: border-box;
+  text-align: center;
+  padding: 12px;
+  height: 60px;
+  font-size: 1.5rem;
+  background-color: #bdbdbd;
+  border-radius: 12px;
+}

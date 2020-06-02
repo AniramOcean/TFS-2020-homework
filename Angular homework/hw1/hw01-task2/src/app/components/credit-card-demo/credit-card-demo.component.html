@@ -1,0 +1,21 @@
+<form class="form">
+
+  <div class="container"
+       (keyup.enter) = "onClick(cardInput.value)"
+  >
+    <h2>Credit Card pipe</h2>
+
+    <input type="text"
+           placeholder="1234123412341234"
+           maxlength="16"
+           aria-label="creditCardPipe"
+    #cardInput>
+
+    <button
+      type="button" class="btn"
+      (click) = "onClick(cardInput.value)"
+    >Convert</button>
+    <p class="result">{{ cardInput.value | creditCardMask }}</p>
+  </div>
+
+</form>

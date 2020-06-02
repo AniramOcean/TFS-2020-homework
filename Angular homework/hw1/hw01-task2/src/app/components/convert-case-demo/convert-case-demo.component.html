@@ -1,0 +1,24 @@
+<form class="form">
+  <div class="container">
+    <h3>Convert Case pipe</h3>
+
+    <input type="text"
+           aria-label="convertCasePipe"
+           value={{inputValue}}
+           #inputCase>
+    <div>
+      <select name="selectedType" [(ngModel)]="selectedType">
+        <option value="select">Select case type</option>
+        <option value="title">TitleCase</option>
+        <option value="upper">UpperCase</option>
+        <option value="lower">LowerCase</option>
+      </select>
+    </div>
+    <button type="button" class="btn"
+            (click)="onClick(inputCase.value)">Convert</button>
+
+    <p class="result">{{ inputCase.value | convertCase:selectedType}}</p>
+
+  </div>
+
+</form>

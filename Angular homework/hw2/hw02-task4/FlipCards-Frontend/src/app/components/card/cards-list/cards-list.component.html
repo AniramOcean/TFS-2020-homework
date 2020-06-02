@@ -1,0 +1,13 @@
+<div class="cards">
+  <div class="cards-button" >
+    <button class="button-flip" (click)="isCardsFlipped = !isCardsFlipped"
+            >Перевернуть все карты</button>
+  </div>
+  <div class="cards-list" *ngFor="let card of cards; let index = index">
+    <app-card-demo [card]="card"
+                   [isCardFlipped]="isCardsFlipped"
+                   (deleted)="onCardDelete(index)"
+                   (clicked)="onFlipClick(index)">
+    </app-card-demo>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<form class="form" [formGroup]="form" (submit)="onSubmit()">
+  <div class="form-title">Добавить карточку</div>
+  <div class="form-content">
+    <div class="row">
+      <input formControlName="title"
+             [class.is-invalid]="getTitle.invalid && getTitle.touched"
+             [class.is-valid]="getTitle.valid"
+             type="text" placeholder="Название" aria-label="Название">
+      <div class="form-error">
+        {{getError('title')}}
+      </div>
+    </div>
+    <div class="row">
+      <textarea formControlName="description"
+                [class.is-invalid]="getDescription.invalid && getDescription.touched"
+                [class.is-valid]="getDescription.valid"
+                placeholder="Описание" aria-label="Описание"></textarea>
+      <div class="form-error">
+        {{getError('description')}}
+      </div>
+    </div>
+    <div class="row row_submit">
+      <input type="submit" class="button" value="Добавить карточку">
+    </div>
+  </div>
+</form>

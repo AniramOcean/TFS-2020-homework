@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Homework 1</title>
+  <script src="index.js" type="module"></script>
+</head>
+<body>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input">Arg: </label>
+      <input class="input" type="text" id="input" placeholder="'Сэр, мне кажется этот астероид нестабилен.'">
+      <button class="btn" type="button" onclick="capitalize()">Test</button>
+    </div>
+    <div class="output" id="answer"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-2">Your values: </label>
+      <input class="input" type="text" id="input-2" placeholder="Что угодно. Вернет минимум и максимум.">
+      <button class="btn" type="button" onclick="getMinMax()">Get min and max</button>
+    </div>
+    <div class="output" id="value"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-3">Sums values: </label>
+      <input class="input" type="text" id="input-3" placeholder="'1 2 3 4' &rarr; '10'">
+      <button class="btn" type="button" onclick="sum()">Calculate this(sum)</button>
+    </div>
+    <div class="output" id="sumCalc"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-4">Calls: </label>
+      <input class="input" type="text" id="input-4" placeholder="'12' - вызовет функцию 12 раз">
+      <button class="btn" type="button" onclick="limitCalls()">Call</button>
+    </div>
+    <div class="output" id="calls"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-5">To rle: </label>
+      <input class="input" type="text" id="input-5" placeholder="'RRDD' &rarr; 'R2D2'">
+      <button class="btn" type="button" onclick="rle()">Get rle</button>
+    </div>
+    <div class="output" id="getRle"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-6">Your password: </label>
+      <input class="input" type="text" id="input-6" placeholder="'This is the 7th password I have come up with!'">
+      <button class="btn" type="button" onclick="passwordCheck()">Check my pass</button>
+    </div>
+    <div class="output" id="pass"></div>
+  </form>
+
+  <form class="form">
+    <div class="form__data">
+      <label for="input-7">Multiply values: </label>
+      <input class="input" type="text" id="input-7" placeholder="Две любые цифры, вернет их произведение">
+      <button class="btn" type="button" onclick="multiple()">Calculate this(multiple)</button>
+    </div>
+    <div class="output" id="multiCalc"></div>
+  </form>
+
+</body>
+</html>

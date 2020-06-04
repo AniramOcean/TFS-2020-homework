@@ -1,0 +1,109 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="row">
+    <div class="col">
+      <div class="input-group mb-2">
+        <input type="text"
+               class="form-control"
+               formControlName='title'
+               [class.is-invalid]="titleValue.invalid && titleValue.dirty && titleValue.touched"
+               [class.is-valid]="titleValue.valid"
+               placeholder="Название *"
+               aria-label="Название">
+      </div>
+
+      <div *ngIf="titleValue.invalid && titleValue.touched"
+           class="validation">
+        <small *ngIf="titleErrors.required">
+          Обязательное поле
+        </small>
+
+        <small *ngIf="titleErrors.minlength">
+          Коротковато, минимум {{titleErrors.minlength.requiredLength}} символов.
+          <br>
+          Сейчас {{titleErrors.maxlength.actualLength}} символов.
+        </small>
+
+        <small *ngIf="titleErrors.maxlength">
+          Длинновато, максимум {{titleErrors.maxlength.requiredLength}} символов.
+          <br>
+          Сейчас {{titleErrors.maxlength.actualLength}} символов.
+        </small>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="input-group mb-2">
+        <input type="text"
+               class="form-control"
+               formControlName='price'
+               [class.is-invalid]="priceValue.invalid && priceValue.dirty"
+               [class.is-valid]="priceValue.valid"
+               placeholder="Стоимость *"
+               aria-label="Стоимость">
+      </div>
+
+      <div *ngIf="priceValue.invalid && priceValue.touched"
+           class="validation">
+        <small *ngIf="priceErrors.required">
+          Обязательное поле
+        </small>
+
+        <small *ngIf="priceErrors.min">
+          Минимальная стоимость {{priceErrors.min.min}}
+        </small>
+
+        <small *ngIf="priceErrors.max">
+          Ну ты и транжира.
+          <br>
+          Максимальная стоимость {{priceErrors.max.max}}
+        </small>
+
+        <small *ngIf="priceErrors.pattern">
+          Алло, это стоимость, нужны цифры.
+        </small>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="input-group mb-2">
+        <input type="date"
+               formControlName='date'
+               name="date"
+               id="date"
+               class="form-control"
+               placeholder="Дата"
+               aria-label="Дата">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="input-group mb-2">
+        <textarea formControlName='comment'
+                  type="text"
+                  class="form-control"
+                  placeholder="Комментарий"
+                  aria-label="Комментарий">
+        </textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="input-group mb-2 justify-content-center">
+        <button [disabled]="titleValue.invalid || priceValue.invalid"
+                type="submit" class="btn btn-sm btn-outline-secondary">
+          Добавить расходы
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

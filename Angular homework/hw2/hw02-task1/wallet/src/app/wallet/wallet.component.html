@@ -1,0 +1,49 @@
+<div class="container wallet">
+  <div class="row wallet-header">
+    <div class="col text-center">
+      <h4>Мой первый кошелек</h4>
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-sm-between p-2">
+    <div class="col col-8">Ваши расходы за неделю</div>
+    <div class="col col-2">
+      <button type="button"
+              class="btn"
+              [class.btn-outline-primary]="!isAddPurchaseVisible"
+              [class.btn-outline-danger]="isAddPurchaseVisible"
+              (click)="onClick()">
+        {{ isAddPurchaseVisible ? '-' : '+' }}
+      </button>
+    </div>
+  </div>
+
+  <app-purchase-add *ngIf="isAddPurchaseVisible" (add)="onAdd($event)"></app-purchase-add>
+
+  <div class="row">
+    <div class="col">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"
+            *ngFor="let purchase of purchases, let index = index">
+          <app-purchase-preview [isDateVisible]="index === currentIndex"
+                                [purchase]="purchase"
+                                (edit)="onEdit($event)"
+                                (deleted)="onPurchaseDelete(index)"
+                                (clicked)="onPurchaseClick(index)"
+          >
+          </app-purchase-preview>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row align-items-center text-center p-3 summary">
+    <div class="col">
+      <span class="summary-label">Итого:&nbsp;</span>
+      <span class="summary-value">
+        <strong>{{summary }}</strong>
+      </span>
+    </div>
+  </div>
+
+</div>

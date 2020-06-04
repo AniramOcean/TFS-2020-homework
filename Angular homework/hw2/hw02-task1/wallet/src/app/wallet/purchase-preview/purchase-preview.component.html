@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-between align-items-center p-2 purchase"
+     (click)="onClick()">
+  {{ purchase.title }}
+  <span class="badge badge-secondary">{{ purchase.price }}</span>
+  <span class="delete"
+        (click)="onDelete($event)">X</span>
+</div>
+
+
+<div *ngIf="isDateVisible && !isEdited" class="d-flex flex-column">
+  <table>
+    <tr>
+      <th>Дата:</th>
+      <td class="d-block p-2 text-black">{{ purchase.date | date: 'longDate' }}</td>
+    </tr>
+    <tr>
+      <th>Комментарий:</th>
+      <td *ngIf="purchase.comment" class="d-block p-2 text-black">{{ purchase.comment }}</td>
+    </tr>
+  </table>
+  <div class="input-group mb-2 justify-content-center">
+    <button type="submit" class="btn btn-sm btn-outline-secondary"
+            (click)="onEditClick()">
+      Редактировать
+    </button>
+  </div>
+</div>
+
+<div *ngIf="isEdited && isDateVisible" class="preview-body">
+  <form [formGroup]="editForm" (submit)="onSubmit()">
+    <div class="form-group">
+      <input formControlName="title" type="text" class="form-control"
+             placeholder="Название" aria-label="Название">
+      <div class="invalid-feedback">Тут ошибки</div>
+    </div>
+    <div class="form-group">
+      <input formControlName="price" type="text"
+             class="form-control" placeholder="Стоимость" aria-label="Стоимость">
+      <div class="invalid-feedback">Тут ошибки</div>
+    </div>
+    <div class="form-group">
+      <input formControlName="date" type="date"
+             class="form-control" placeholder="Дата" aria-label="Дата">
+    </div>
+    <div class="form-group">
+      <textarea formControlName="comment" class="form-control" aria-label="Комментарий"></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit"
+              [disabled]="editForm.pristine || editForm.invalid"
+              class="btn btn-success">Готово
+      </button>
+    </div>
+    <div class="form-group">
+      <button type=button class="btn btn-danger"
+              (click)="onCancelEdit()">Отмена
+      </button>
+    </div>
+  </form>
+</div>
